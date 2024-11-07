@@ -22,12 +22,12 @@ export class TasksService {
   }
 
   async update(id: string, data: UpdateTaskDto) {
-    await this.findOne(id);  // Ensure task exists
+    await this.findOne(id);
     return this.prisma.task.update({ where: { id }, data });
   }
 
   async delete(id: string) {
-    await this.findOne(id);  // Ensure task exists
+    await this.findOne(id);
     return this.prisma.task.delete({ where: { id } });
   }
 }
